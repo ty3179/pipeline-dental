@@ -1,1 +1,1357 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Dental - Stop Losing Revenue to Missed Calls</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Urgent Banner */
+        .urgent-banner {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .urgent-banner strong {
+            color: #fef08a;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 120px;
+            width: auto;
+        }
+        
+        .cta-button {
+            background: #059669;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .cta-button:hover {
+            background: #047857;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+        }
+        
+        .cta-button-secondary {
+            background: white;
+            color: #059669;
+            border: 2px solid #059669;
+        }
+        
+        .cta-button-secondary:hover {
+            background: #f0fdf4;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+            padding: 80px 0;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            font-weight: 800;
+        }
+        
+        .pain-highlight {
+            color: #dc2626;
+            display: block;
+        }
+        
+        .hero-text p {
+            font-size: 20px;
+            color: #4b5563;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        
+        .stat-row {
+            display: flex;
+            gap: 40px;
+            margin: 32px 0;
+        }
+        
+        .stat {
+            flex: 1;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #059669;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+        
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        
+        .video-container {
+            background: #1a1a1a;
+            border-radius: 12px;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-placeholder {
+            color: white;
+            text-align: center;
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: #059669;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+            background: #047857;
+        }
+        
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 24px solid white;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            margin-left: 6px;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            font-weight: 800;
+        }
+        
+        .section-header p {
+            font-size: 20px;
+            color: #6b7280;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .problem-card {
+            padding: 32px;
+            background: #f9fafb;
+            border-radius: 12px;
+            border-left: 4px solid #dc2626;
+        }
+        
+        .problem-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .problem-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .problem-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        
+        .problem-stat {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+            font-weight: 600;
+            color: #dc2626;
+        }
+        
+        /* Use Cases */
+        .use-cases {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+        
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .use-case {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .use-case:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        
+        .use-case-number {
+            width: 48px;
+            height: 48px;
+            background: #d1fae5;
+            color: #059669;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .use-case h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .use-case p {
+            color: #6b7280;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        
+        .use-case-result {
+            background: #f0fdf4;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #059669;
+            margin-top: 20px;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 16.66%;
+            right: 16.66%;
+            height: 2px;
+            background: linear-gradient(to right, #d1fae5, #059669, #047857);
+            z-index: 0;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #059669, #047857);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            font-weight: 800;
+            margin: 0 auto 24px;
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+        }
+        
+        .step h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .step p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        
+        .step-3 .step-number {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        }
+        
+        .step-result {
+            margin-top: 20px;
+            font-size: 28px;
+            font-weight: 800;
+            color: #059669;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .pricing-card.featured {
+            border: 3px solid #059669;
+            transform: scale(1.05);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #059669;
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .pricing-tagline {
+            color: #6b7280;
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+        
+        .price {
+            font-size: 52px;
+            font-weight: 800;
+            color: #059669;
+            margin-bottom: 4px;
+        }
+        
+        .price-period {
+            color: #6b7280;
+            font-size: 16px;
+        }
+        
+        .setup-fee {
+            margin: 16px 0 24px;
+            padding: 12px;
+            background: #fef3c7;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .setup-original {
+            text-decoration: line-through;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        .setup-discounted {
+            color: #059669;
+            font-weight: 700;
+            font-size: 18px;
+            display: block;
+            margin-top: 4px;
+        }
+        
+        .features {
+            list-style: none;
+            margin: 32px 0;
+        }
+        
+        .features li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            color: #4b5563;
+        }
+        
+        .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #059669;
+            font-weight: 800;
+            font-size: 20px;
+        }
+        
+        /* Objection Neutralizer */
+        .objection-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .objection-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .objection-icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+        }
+        
+        .objection-content h2 {
+            font-size: 38px;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+        
+        .objection-content p {
+            font-size: 20px;
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .guarantee-box {
+            background: #f0fdf4;
+            border: 2px solid #059669;
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 40px;
+        }
+        
+        .guarantee-box h3 {
+            color: #059669;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-style: italic;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 1000px;
+            margin: 60px auto 0;
+        }
+        
+        .faq-item {
+            padding: 24px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .faq-item p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        
+        /* Lead Magnet CTA */
+        .lead-magnet {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #059669, #047857);
+            color: white;
+        }
+        
+        .lead-magnet-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .lead-magnet h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .lead-magnet p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+        
+        .lead-magnet-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .lead-magnet-form h3 {
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4b5563;
+            font-weight: 600;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #059669;
+        }
+        
+        /* Slider Styling */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #059669;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #047857;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: #059669;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        input[type="range"]::-moz-range-thumb:hover {
+            background: #047857;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #059669;
+        }
+        
+        .footer-brand p {
+            color: #9ca3af;
+            line-height: 1.7;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            display: block;
+            padding: 6px 0;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #059669;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            text-align: center;
+            color: #6b7280;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #6b7280;
+            background: none;
+            border: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content,
+            .lead-magnet-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-grid,
+            .use-case-grid,
+            .pricing-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps::before {
+                display: none;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-text h1 {
+                font-size: 38px;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgent Banner -->
+    <div class="urgent-banner">
+        🎯 Limited Time: <strong>50% OFF Setup Fee</strong> for Practices That Book by End of Month
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="pipeline-dental-logo.png" alt="Pipeline Dental">
+                </div>
+                <a href="#pricing" class="cta-button">See Pricing</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        <span class="pain-highlight">Your Front Desk Is Drowning.</span>
+                        Your Revenue Is Leaking.
+                    </h1>
+                    <p>Every missed call is a new patient booking with your competitor. Every slow response to a web lead is wasted marketing dollars. Your team is overwhelmed—and it's costing you.</p>
+                    
+                    <div class="stat-row">
+                        <div class="stat">
+                            <span class="stat-number">67%</span>
+                            <span class="stat-label">of calls go to voicemail during lunch rush</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">$47K</span>
+                            <span class="stat-label">avg. annual revenue leak per practice</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-ctas">
+                        <button class="cta-button" onclick="document.getElementById('video-modal').classList.add('active')">Watch 2-Min Solution →</button>
+                        <a href="#lead-magnet" class="cta-button cta-button-secondary">Get Free Revenue Report</a>
+                    </div>
+                </div>
+                
+                <div class="video-container" style="cursor: pointer; background: none;">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80" alt="Modern dental office reception" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Real Cost of Running a Busy Practice</h2>
+                <p>These aren't technology problems. They're operational realities that bleed revenue.</p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">📞</div>
+                    <h3>Missed Calls = Lost Patients</h3>
+                    <p>Your front desk is checking in patients, handling insurance, managing the schedule, and fielding questions from the waiting room. When the phone rings during a rush, it goes to voicemail. That new patient? They're calling the next practice on Google.</p>
+                    <div class="problem-stat">Average practice misses 40-60 calls per month</div>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Wasted Marketing Spend</h3>
+                    <p>You're paying for Google Ads, SEO, and Facebook campaigns. Leads come in through your website at 8pm on Tuesday. Your team follows up Thursday morning. Too late—they already booked somewhere else. Your marketing ROI is half of what it should be.</p>
+                    <div class="problem-stat">78% of patients book with the first practice to respond</div>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">😰</div>
+                    <h3>Overwhelmed Staff</h3>
+                    <p>Your front desk team is incredible, but they can't be in two places at once. Between patient check-ins, insurance verification, recall calls, and unexpected emergencies, they're maxed out. Adding more patients means adding more chaos—unless something changes.</p>
+                    <div class="problem-stat">Front desk turnover costs $4,000-8,000 per hire</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <h2>Three Ways You're Losing Revenue Right Now</h2>
+                <p>Every practice has these gaps. Most just don't realize how much it's costing them.</p>
+            </div>
+            
+            <div class="use-case-grid">
+                <div class="use-case">
+                    <div class="use-case-number">1</div>
+                    <h3>After-Hours Calls</h3>
+                    <p>A potential patient has a toothache at 7pm. They call your practice. Voicemail. They call your competitor. Booked by 7:15pm.</p>
+                    <p><strong>When it happens:</strong> Evenings, weekends, holidays—whenever your office is closed but patients are searching for care.</p>
+                    <div class="use-case-result">✓ Capture 100% of after-hours inquiries automatically</div>
+                </div>
+                
+                <div class="use-case">
+                    <div class="use-case-number">2</div>
+                    <h3>Overflow & Rush Times</h3>
+                    <p>It's 11:45am. Three patients checking out, two on hold, one asking about insurance, and your hygienist needs the front desk. Four new patient calls go straight to voicemail.</p>
+                    <p><strong>When it happens:</strong> Lunch rush, morning check-ins, insurance verification backlogs, emergency walk-ins.</p>
+                    <div class="use-case-result">✓ Handle overflow calls while your team focuses on in-office patients</div>
+                </div>
+                
+                <div class="use-case">
+                    <div class="use-case-number">3</div>
+                    <h3>Web Lead Delays</h3>
+                    <p>Someone fills out your "Book Appointment" form on your website at 9pm. Your team sees it the next morning at 10am. 13 hours later. They've already booked with the practice that responded in 60 seconds.</p>
+                    <p><strong>When it happens:</strong> Any time someone submits a contact form, chat message, or online inquiry outside business hours.</p>
+                    <div class="use-case-result">✓ Respond to every web lead in under 60 seconds, 24/7</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>From Setup to More Revenue in 3 Simple Steps</h2>
+                <p>No IT involvement. No PMS access. No disruption to your team.</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Quick Setup</h3>
+                    <p>We configure your AI booking system with your hours, services, and scheduling preferences. Your team reviews it, we test it together, and you're live in under 2 weeks. Zero IT involvement required.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Seamless Handoff</h3>
+                    <p>Calls and web leads are automatically handled 24/7. New patients get booked directly into your existing calendar. Your front desk gets notified of new appointments. Everything flows into your current workflow—no changes needed.</p>
+                </div>
+                
+                <div class="step step-3">
+                    <div class="step-number">3</div>
+                    <h3>Watch Revenue Grow</h3>
+                    <p>Capture every opportunity that used to slip through the cracks. After-hours calls, overflow inquiries, instant web lead response—all converting to booked appointments.</p>
+                    <div class="step-result">💰 Average increase: 15-25 new patients/month</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple Pricing. Real ROI.</h2>
+                <p>Choose the coverage level that fits your practice. All plans include setup, training, and ongoing support.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Safety Net</h3>
+                    <p class="pricing-tagline">Capture after-hours opportunities</p>
+                    <div class="price">$497<span class="price-period">/month</span></div>
+                    <div class="setup-fee">
+                        <span class="setup-original">Setup: $997</span>
+                        <span class="setup-discounted">$499 if you book by EOM</span>
+                    </div>
+                    <ul class="features">
+                        <li>After-hours coverage (evenings, weekends, holidays)</li>
+                        <li>Up to 100 handled calls/month</li>
+                        <li>Direct calendar booking</li>
+                        <li>SMS confirmations</li>
+                        <li>Basic reporting dashboard</li>
+                    </ul>
+                    <a href="https://calendly.com/your-link" class="cta-button" style="width: 100%; text-align: center; margin-top: 20px;">Book Demo</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3>Growth Engine</h3>
+                    <p class="pricing-tagline">Handle overflow + maximize marketing ROI</p>
+                    <div class="price">$897<span class="price-period">/month</span></div>
+                    <div class="setup-fee">
+                        <span class="setup-original">Setup: $1,497</span>
+                        <span class="setup-discounted">$749 if you book by EOM</span>
+                    </div>
+                    <ul class="features">
+                        <li><strong>Everything in Safety Net, plus:</strong></li>
+                        <li>Business hours overflow coverage</li>
+                        <li>Up to 250 handled calls/month</li>
+                        <li>Web form + phone coverage</li>
+                        <li>Advanced patient qualification</li>
+                        <li>Lead source tracking</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="https://calendly.com/your-link" class="cta-button" style="width: 100%; text-align: center; margin-top: 20px;">Book Demo</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Revenue Maximizer</h3>
+                    <p class="pricing-tagline">Complete coverage for multi-location & high-growth practices</p>
+                    <div class="price">$1,497<span class="price-period">/month</span></div>
+                    <div class="setup-fee">
+                        <span class="setup-original">Setup: $1,997</span>
+                        <span class="setup-discounted">$999 if you book by EOM</span>
+                    </div>
+                    <ul class="features">
+                        <li><strong>Everything in Growth Engine, plus:</strong></li>
+                        <li>24/7 full coverage, unlimited calls</li>
+                        <li>Multi-location support</li>
+                        <li>Custom workflows & scripts</li>
+                        <li>Advanced analytics & insights</li>
+                        <li>Dedicated account manager</li>
+                        <li>Quarterly strategy reviews</li>
+                    </ul>
+                    <a href="https://calendly.com/your-link" class="cta-button" style="width: 100%; text-align: center; margin-top: 20px;">Book Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objection Neutralizer -->
+    <section class="objection-section">
+        <div class="container">
+            <div class="objection-content">
+                <div class="objection-icon">🤝</div>
+                <h2>"Will this mess up my front desk or patient experience?"</h2>
+                <p>Not even close. Your team will love it—and here's why:</p>
+                <p><strong>This backs up your staff, it doesn't replace them.</strong> Your front desk still handles in-office patients, complex questions, and relationship-building. Pipeline Dental handles the overflow and after-hours calls they can't get to anyway.</p>
+                <p><strong>Your patients get faster, better service.</strong> Instead of voicemail, they get immediate answers and instant booking—24/7. No more phone tag. No more "we'll call you back tomorrow." Just seamless scheduling.</p>
+                <p><strong>Zero disruption to your workflow.</strong> We don't touch your PMS. We don't change your network. We don't require IT involvement. Appointments flow into your existing calendar automatically. Your team just shows up and sees new patients booked.</p>
+                
+                <div class="guarantee-box">
+                    <h3>Our Promise</h3>
+                    <p>If your team or patients aren't happy within the first 30 days, we'll refund your setup fee and part ways—no questions asked. We only succeed if you see real results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Practices Already Winning with Pipeline Dental</h2>
+                <p>Real results from real dental practices</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-placeholder">
+                        Case study coming soon from pilot practice #1
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-placeholder">
+                        Case study coming soon from pilot practice #2
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-placeholder">
+                        Case study coming soon from pilot practice #3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Common Questions</h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Do you need access to our PMS/EHR?</h3>
+                    <p>No. We don't touch Dentrix, Eaglesoft, Open Dental, or any practice management system. We work completely outside your IT infrastructure and book appointments into your existing online calendar.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Does our IT provider need to be involved?</h3>
+                    <p>Nope. Zero IT involvement required. No network changes, no software installs, no access to internal systems. We handle everything on our end.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What about HIPAA compliance?</h3>
+                    <p>We only handle new patient inquiries—before they're in your system. No PHI, no chart access, no protected health information. We can provide a BAA if needed, but most practices don't require one for this use case.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How long does setup take?</h3>
+                    <p>Most practices are live in under 2 weeks. We configure the system, you review and test it with us, then we flip it on. Simple.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can we cancel anytime?</h3>
+                    <p>Yes. Month-to-month commitment. If it's not working for you, you can cancel with 30 days notice. No long-term contracts.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What if we already have an answering service?</h3>
+                    <p>Traditional answering services take messages—we actually book the appointment. Big difference. We close the loop so your team doesn't have to play phone tag the next day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet CTA -->
+    <section class="lead-magnet" id="lead-magnet">
+        <div class="container">
+            <div class="lead-magnet-content">
+                <div>
+                    <h2>Find Out How Much Revenue You're Losing</h2>
+                    <p>Get your free Missed Call Revenue Report. We'll analyze your practice's call volume, timing patterns, and estimate exactly how much revenue is slipping through the cracks every month.</p>
+                    <p><strong>Takes 2 minutes. Zero obligation.</strong></p>
+                </div>
+                
+                <div class="lead-magnet-form">
+                    <h3>Get Your Free Report</h3>
+                    <form id="revenue-report-form">
+                        <div class="form-group">
+                            <label>Practice Name</label>
+                            <input type="text" name="practice-name" placeholder="Bright Smile Dental" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" name="name" placeholder="Dr. Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="you@practice.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" name="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Approximate monthly new patient calls: <span id="slider-value" style="color: #059669; font-weight: 700;">50</span></label>
+                            <input type="range" id="monthly-calls-slider" name="monthly-calls" min="10" max="300" value="50" step="10" style="width: 100%; height: 8px; border-radius: 5px; background: linear-gradient(to right, #059669 0%, #059669 13%, #d1fae5 13%, #d1fae5 100%); outline: none; -webkit-appearance: none; appearance: none; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #6b7280; margin-top: 8px;">
+                                <span>10 calls</span>
+                                <span>300+ calls</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;" id="submit-btn">Send Me My Report →</button>
+                        <div id="form-message" style="margin-top: 16px; padding: 12px; border-radius: 6px; display: none; text-align: center;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="pipeline-dental-logo.png" alt="Pipeline Dental" style="height: 100px; margin-bottom: 16px;">
+                    <p>Helping dental practices capture every opportunity, without adding headcount or IT complexity.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#use-cases">Use Cases</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Get Started</h4>
+                    <ul>
+                        <li><a href="https://calendly.com/your-link">Book a Demo</a></li>
+                        <li><a href="#lead-magnet">Free Revenue Report</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                © 2024 Pipeline Dental. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="modal" id="video-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="document.getElementById('video-modal').classList.remove('active')">&times;</button>
+            <h2 style="margin-bottom: 20px; color: #1a1a1a;">How Pipeline Dental Works</h2>
+            <div style="aspect-ratio: 16/9; background: #1a1a1a; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 20px;">
+                <p style="text-align: center; padding: 40px;">
+                    [Your 2-minute animated explainer video will be embedded here]<br><br>
+                    Problem → 3 Use Cases → Strong CTA
+                </p>
+            </div>
+            <a href="https://calendly.com/your-link" class="cta-button" style="width: 100%; text-align: center;">Book Your Demo Now →</a>
+        </div>
+    </div>
+
+    <script>
+        // Close modal when clicking outside
+        document.getElementById('video-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Slider functionality
+        const slider = document.getElementById('monthly-calls-slider');
+        const sliderValue = document.getElementById('slider-value');
+        
+        // Update display value when slider moves
+        slider.addEventListener('input', function() {
+            sliderValue.textContent = this.value;
+            // Update slider background gradient
+            const percentage = ((this.value - this.min) / (this.max - this.min)) * 100;
+            this.style.background = `linear-gradient(to right, #059669 0%, #059669 ${percentage}%, #d1fae5 ${percentage}%, #d1fae5 100%)`;
+        });
+        
+        // Form submission to Make.com webhook
+        document.getElementById('revenue-report-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const formMessage = document.getElementById('form-message');
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formMessage.style.display = 'none';
+            
+            // Collect form data
+            const formData = {
+                practiceName: this['practice-name'].value,
+                name: this['name'].value,
+                email: this['email'].value,
+                phone: this['phone'].value,
+                monthlyCalls: slider.value
+            };
+            
+            try {
+                // Send to Make.com webhook
+                const response = await fetch('https://hook.us2.make.com/kkjb5vrdfin3lwee51plw2ss3p5f47i2', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    // Success
+                    formMessage.style.display = 'block';
+                    formMessage.style.background = '#f0fdf4';
+                    formMessage.style.color = '#059669';
+                    formMessage.style.border = '2px solid #059669';
+                    formMessage.textContent = '✓ Success! Check your email for your personalized revenue report.';
+                    
+                    // Reset form
+                    this.reset();
+                    slider.value = 50;
+                    sliderValue.textContent = '50';
+                    slider.style.background = 'linear-gradient(to right, #059669 0%, #059669 13%, #d1fae5 13%, #d1fae5 100%)';
+                    
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Me My Report →';
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                // Error
+                formMessage.style.display = 'block';
+                formMessage.style.background = '#fef2f2';
+                formMessage.style.color = '#dc2626';
+                formMessage.style.border = '2px solid #dc2626';
+                formMessage.textContent = 'Oops! Something went wrong. Please try again or email us directly.';
+                
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Me My Report →';
+            }
+        });
+    </script>
+</body>
+</html>
