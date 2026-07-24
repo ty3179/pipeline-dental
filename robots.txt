@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pipelinedental.com/sitemap.xml
+Sitemap: https://ty3179.github.io/pipeline-dental/sitemap.xml
